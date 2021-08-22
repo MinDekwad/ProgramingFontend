@@ -9,7 +9,7 @@ export default function Programming() {
   const fetchData = async () => {
     try {
       const responseData = await axios.get(
-        `http://localhost:3001/api/v1/programming/read/`, {headers:{Authorization : `Bearer ${cachData.accesstoken}`}}
+        `http://localhost:3001/api/v1/programming/read/`, {headers:{Authorization : `Bearer ${cachData}`}}
       );
       const { data: programming } = responseData;
       const { data } = programming;
@@ -44,7 +44,7 @@ export default function Programming() {
     .then( async (willDelete) => {
       if (willDelete) {
         try{
-          const resData = await axios.delete(`http://localhost:3001/api/v1/programming/delete/`+id, {headers:{Authorization : `Bearer ${cachData.accesstoken}`}});
+          const resData = await axios.delete(`http://localhost:3001/api/v1/programming/delete/`+id, {headers:{Authorization : `Bearer ${cachData}`}});
           const data = resData.data
           const message = data.message
           if(message === "ลบข้อมูลสำเร็จ"){

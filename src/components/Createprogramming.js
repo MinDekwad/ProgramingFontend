@@ -18,7 +18,7 @@ export default function Createprogramming() {
                 Name : name,
                 Detail : detail,
             }                                                                                              
-            const respData = await axios.post(`http://localhost:3001/api/v1/programming/create/`,Postdata, {headers:{Authorization : `Bearer ${cachData.accesstoken}` }})
+            const respData = await axios.post(`http://localhost:3001/api/v1/programming/create/`,Postdata, {headers:{Authorization : `Bearer ${cachData}` }})
             const data = respData.data
             const message = data.message
             if (message === "เพิ่มข้อมูลสำเร็จ"){

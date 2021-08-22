@@ -16,7 +16,7 @@ export default function Editprogramming() {
 
     const fetchData = useCallback(async (id) =>{
         try{
-            const respData = await axios.get(`http://localhost:3001/api/v1/programming/readid/`+id, {headers:{Authorization:`Bearer ${cachData.accesstoken}`}});
+            const respData = await axios.get(`http://localhost:3001/api/v1/programming/readid/`+id, {headers:{Authorization:`Bearer ${cachData}`}});
             const { data : respdata } = respData
             const {data} = respdata
             setName(data.Name);
@@ -32,7 +32,7 @@ export default function Editprogramming() {
                 Name : Name,
                 Detail : Detail,
             }
-            const resData = await axios.put(`http://localhost:3001/api/v1/programming/update/`+id, Putdata, {headers:{Authorization: `Bearer ${cachData.accesstoken}`}});
+            const resData = await axios.put(`http://localhost:3001/api/v1/programming/update/`+id, Putdata, {headers:{Authorization: `Bearer ${cachData}`}});
             const data = resData.data;
             const message = data.message;
             if(message === "แก้ไขข้อมูลสำเร็จ"){
