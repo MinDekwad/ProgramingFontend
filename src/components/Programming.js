@@ -48,7 +48,7 @@ export default function Programming() {
           const data = resData.data
           const message = data.message
           if(message === "ลบข้อมูลสำเร็จ"){
-            swal("Poof! Your imaginary file has been deleted!", {
+            swal("Poof! Your data has been deleted!", {
               icon: "success",
             });
           }else{
